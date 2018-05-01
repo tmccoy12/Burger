@@ -1,0 +1,61 @@
+* {
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    font-family: 'Noto Serif', serif;
+}
+body {
+    min-height: 100%;
+    text-align: center;
+    background: url(images/rest4.jpg);
+    background-size: cover;
+    font-family: 'Noto Serif', serif;
+}
+
+
+.container-top h1 {
+    margin: 30px auto;
+    padding: 20px;
+}
+/*Not Devoured*/
+.container-left {
+    width: 33.33%;
+    height: 100%;
+    float: left;
+   
+}
+/*Add a burger*/
+.container-middle {
+    width: 33.33%;
+    height: 100%;
+    padding: 50px;
+}
+
+#burgerInput {
+    color: black;
+}
+#ca {
+    color: black;
+}
+/*Devoured*/
+.container-right {
+    border: 1px solid;
+    float: right;
+    width: 33.33%;
+    height: 100%;
+}
+
+table {
+    margin: 0 auto;
+}
+
+.devoured {
+    width: 500px;
+    height: 500px;
+    float: left;
+}
+.notDevoured {
+    width: 500px;
+    height: 500px;
+    float: right;
+}

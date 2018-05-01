@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="section">
+                <form class="create-update-form" action="/" method="POST">
+                    <div class="form-group">
+                        <label for="ca">Burger Name:</label>
+                        <input type="text" id="burgerInput" name="burger_name" placeholder="Add a burger">
+                        <button class="btn btn-warning" type="submit">Add burger</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class='notDevoured section'>
+                <h2>Not Devoured</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="titleCenter">Not Devoured</th>
+                            <th class="titleCenter">Devour it</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {{#each foods}} {{#unless this.devoured}}
+                            <td>
+                                {{this.burger_name}}
+                            </td>
+                            <td>
+                                <form action="/{{this.id}}  ?_method=PUT" method="POST">
+                                    <input type="hidden" name="devoured" value="true">
+                                    <button class="btn btn-success" type="submit">Devour it!</button>
+                                </form>
+                            </td>
+                            {{/unless}}
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="devoured section">
+                <thread>
+                    <h2>Devoured</h2>
+                </thread>
+                <table class="table">
+                    {{#each foods}} {{#if this.devoured}}
+                    <tr>
+                        {{this.burger_name}}
+                        <form action="/{{this.id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="id" value="{{this.id}}">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        </form>
+                    </tr>
+                    <br>
+                    <br> {{/if}} {{/each}}
+                </table>
+            </div>
+        </div>
+
