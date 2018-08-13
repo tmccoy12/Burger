@@ -10,6 +10,7 @@ body {
     background: url(images/rest4.jpg);
     background-size: cover;
     font-family: 'Noto Serif', serif;
+    background-repeat: no-repeat;
 }
 
 
